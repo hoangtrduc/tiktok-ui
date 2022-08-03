@@ -4,7 +4,8 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles)
 
-function Button({ to,
+function Button({
+    to,
     href,
     primary = false,
     outline = false,
@@ -19,7 +20,7 @@ function Button({ to,
     rightIcon,
     onClick,
     ...passProps }) {
-    let comp = 'button';
+    let Comp = 'button';
     const props = {
         onClick,
         ...passProps,
@@ -35,10 +36,10 @@ function Button({ to,
 
     if (to) {
         props.to = to
-        comp = Link
+        Comp = Link
     } else if (href) {
         props.href = href
-        comp = 'a'
+        Comp = 'a'
     }
 
     const classes = cx('wrapper', {
@@ -53,11 +54,11 @@ function Button({ to,
     })
 
     return (
-        <comp className={classes} {...props}>
+        <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
-        </comp>
+        </Comp>
     );
 }
 
