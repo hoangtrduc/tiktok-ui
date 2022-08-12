@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +14,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
+
+import routesConfig from '~/config/routes';
 import Button from '~/components/Button'
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -99,7 +103,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="TikTok" />
+                <Link className={cx('logo-link')} to= {routesConfig.home}>
+                    <img src={images.logo} alt="TikTok" />
+                </Link>
 
                 <Search />
 
