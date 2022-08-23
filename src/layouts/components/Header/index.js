@@ -17,7 +17,7 @@ import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/components/Button'
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -45,6 +45,11 @@ const MENU_ITEMS = [
                     type: 'language',
                     code: 'vi',
                     title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'Suomi (Suomi)',
                 },
             ],
         },
@@ -103,7 +108,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link className={cx('logo-link')} to= {routesConfig.home}>
+                <Link className={cx('logo-link')} to= {config.routes.home}>
                     <img src={images.logo} alt="TikTok" />
                 </Link>
 
